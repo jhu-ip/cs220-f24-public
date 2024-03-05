@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
   }
   
   // write image to output file
-  int num_pixels_written = write_ppm(fp, im);
+  int num_pixels_written = write_ppm(fp, *im);
   fclose(fp);
   printf("Image created with %d pixels.\n", num_pixels_written);
 

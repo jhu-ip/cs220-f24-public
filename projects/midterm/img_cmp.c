@@ -35,15 +35,15 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	Image *im1 = read_ppm(fp1);
-	if (!im1) {
+	Image im1 = read_ppm(fp1);
+	if (im1.data) {
 		fclose(fp1);
 		fclose(fp2);
 		printf("%s is not a valid PPM file\n", file1);
 		return 1;
 	}
-	Image *im2 = read_ppm(fp2);
-	if (!im2) {
+	Image im2 = read_ppm(fp2);
+	if (!im2.data) {
 		free_image(&im1);
 		fclose(fp1);
 		fclose(fp2);
@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 	fclose(fp1);
 	fclose(fp2);
 
-	if (im1->cols != im2->cols || im1->rows != im2->rows) {
+	if (im1.cols != im2.cols || im1.rows != im2.rows) {
 		free_image(&im1);
 		free_image(&im2);
 		printf("Image dimensions differ\n");
@@ -64,10 +64,10 @@ int main(int argc, char **argv) {
 	// Count the number of pixels containing color component values
 	// that differ than more than the max delta
 	int mismatched = 0;
-	int num_pixels = im1->cols * im1->rows;
+	int num_pixels = im1.cols * im1.rows;
 	for (int i = 0; i < num_pixels; i++) {
-		Pixel p1 = im1->data[i];
-		Pixel p2 = im2->data[i];
+		Pixel p1 = im1.data[i];
+		Pixel p2 = im2.data[i];
 		if (!check_pixels(p1, p2, max_delta)) {
 			mismatched++;
 		}
