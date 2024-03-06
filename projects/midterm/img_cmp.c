@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 	}
 
 	Image im1 = read_ppm(fp1);
-	if (im1.data) {
+	if (!im1.data) {
 		fclose(fp1);
 		fclose(fp2);
 		printf("%s is not a valid PPM file\n", file1);
