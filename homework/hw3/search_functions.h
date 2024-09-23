@@ -23,7 +23,9 @@
 
 /*
  * Given a filename and a MAX_SIZExMAX_SIZE grid to fill, this function 
- * populates the grid and returns n, the actual grid dimension. 
+ * populates the grid and returns n, the number of rows. This function 
+ * would also fill in variable pointed to by pointer m with number of
+ * columns.
  * If filename_to_read_from can't be opened, this function returns -1. 
  * If the file contains an invalid grid, this function returns -2.
  */

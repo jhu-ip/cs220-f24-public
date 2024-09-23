@@ -19,10 +19,10 @@
  */
 void test_file_eq();      // This one is already fully defined below.
 void test_populate_grid();
-void test_find_right();
-void test_find_left();
-void test_find_down();
-void test_find_up();
+void test_find_dd();
+void test_find_du();
+void test_find_ad();
+void test_find_au();
 void test_find_all();
 
 
@@ -36,10 +36,10 @@ int main() {
 
   printf("Running search_functions tests...\n");
   test_populate_grid();
-  test_find_right();
-  test_find_left();
-  test_find_down();
-  test_find_up();
+  test_find_dd();
+  test_find_du();
+  test_find_ad();
+  test_find_au();
   test_find_all();
 
   /* You may add calls to additional test functions here. */
@@ -80,7 +80,6 @@ void test_file_eq() {
 }
 
 
-
 void test_populate_grid(){
 
   assert(1);  //replace this stub!
@@ -88,27 +87,27 @@ void test_populate_grid(){
 }
 
 
-void test_find_right(){
+void test_find_dd(){
 
   assert(1);  //replace this stub!
 
 }
 
 
-void test_find_left(){
+void test_find_du(){
 
   assert(1);  //replace this stub!
 }
 
 
-void test_find_down(){
+void test_find_ad(){
 
   assert(1);  //replace this stub!
 
 }
 
 
-void test_find_up(){
+void test_find_au(){
 
   assert(1);  //replace this stub!
 
