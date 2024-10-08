@@ -23,10 +23,13 @@ int read_num( FILE *fp ) {
 
   int val;
   if (fscanf(fp, "%d", &val) == 1) { // try to get an int
-    while(isspace(ch = fgetc(fp))) {
+    ch = fgetc(fp);
+    while (ch == ' ') {
+      ch = fgetc(fp);
       // drop trailing whitespace
     }
     ungetc(ch, fp);
+    if ( (ch = fgetc(fp) ) != '\n') ungetc(ch, fp);
     return val; // we got a value, so return it
   } else {
     fprintf(stderr, "Error:ppm_io - failed to read number from file\n");
