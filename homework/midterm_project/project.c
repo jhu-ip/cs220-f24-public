@@ -32,7 +32,7 @@ void print_usage(void) {
   printf("   binarize <threshold>\n" );
   printf("   pointilism\n" );
   printf("   blur <sigma>\n" );
-  printf("   crop <bottom left (x,y)> <top right (x,y)>\n" );
+  printf("   crop <top left (x,y)> <bottom right (x,y)>\n" );
 }
 
 
