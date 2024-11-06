@@ -13,8 +13,7 @@ class int_node {
  public:
 
   //constructors
-  int_node(int value): data(value), next(nullptr) { }
-  int_node(int value, int_node* ptr): data(value), next(ptr) { }
+  int_node(int value, int_node* ptr = nullptr): data(value), next(ptr) { }
 
   //getters
   int get_data() const         { return data; }
