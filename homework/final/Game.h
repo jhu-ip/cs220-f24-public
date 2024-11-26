@@ -47,6 +47,9 @@ namespace Chess
 		// Returns true if the designated player is in mate
 		bool in_stalemate(const bool& white) const;
 
+        // Return the total material point value of the designated player
+        int point_value(const bool& white) const;
+
 	private:
 		// The board
 		Board board;

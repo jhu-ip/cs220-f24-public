@@ -34,10 +34,13 @@ int main(int argc, char* argv[]) {
 
 		// Indicate whose turn it is
 		if (game.turn_white()) {
-			std::cout << "White's move." << std::endl;
+			std::cout << "white move" << std::endl;
 		} else {
-			std::cout << "Black's move." << std::endl;
+			std::cout << "black move" << std::endl;
 		}
+
+        // Indicate current player's material point value
+        std::cout << "Material point value: " << game.point_value(game.turn_white()) << std::endl;
 
 		// If the board is in a check-mate state, end the game
 		if (game.in_mate(game.turn_white())) {
@@ -58,7 +61,7 @@ int main(int argc, char* argv[]) {
 
 		// Get the next command
 		std::string choice;
-		std::pair<char, char> start , end;
+        //		std::pair<char, char> start , end;
 		std::cout << "Next command: ";
 		std::cin >> choice;
 

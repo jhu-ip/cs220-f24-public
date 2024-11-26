@@ -67,7 +67,16 @@ namespace Chess
 		return false;
 	}
 
-	std::istream& operator>> (std::istream& is, Game& game) {
+    // Return the total material point value of the designated player
+    int Game::point_value(const bool& white) const {
+		/////////////////////////
+		// [REPLACE THIS STUB] //
+		/////////////////////////
+        return -1;
+    }
+
+
+      std::istream& operator>> (std::istream& is, Game& game) {
 		/////////////////////////
 		// [REPLACE THIS STUB] //
 		/////////////////////////
